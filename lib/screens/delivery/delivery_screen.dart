@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:app/screens/delivery/order/order_details_screen.dart';
+import 'package:app/screens/delivery/order_details_screen.dart';
+import 'package:app/screens/delivery/delivery_screen.dart';
+import 'package:app/screens/delivery/DeliveredScreen.dart';
+import 'package:app/screens/delivery/ShippinScreen.dart';
+/* import 'package:app/screens/delivery/MapScreen.dart'; */
 
 class DeliveryScreen extends StatelessWidget {
   @override
@@ -55,8 +59,11 @@ class DeliveryScreen extends StatelessWidget {
           ),
           _buildListTile(Icons.assignment, 'Órdenes', context,
               OrderDetailsScreen()), // Ahora sí lleva a la pantalla correcta
-          _buildListTile(Icons.local_shipping, 'En camino', context, null),
-          _buildListTile(Icons.check_circle, 'Entregado', context, null),
+          _buildListTile(
+              Icons.assignment, 'En camino', context, ShippinScreen()),
+          _buildListTile(
+              Icons.assignment, 'Entregado', context, DeliveredScreen()),
+          /*  _buildListTile(Icons.assignment, 'Mapa', context, MapScreen()), */
         ],
       ),
     );
